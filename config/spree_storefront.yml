@@ -1,0 +1,8 @@
+default:
+  navigation:
+    - title: Librería
+      url: /products
+
+    - title: Nosotros
+
+    - title: Contacto

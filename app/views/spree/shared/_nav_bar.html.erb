@@ -1,0 +1,37 @@
+<ul id="nav-bar" class="nav align-items-center d-flex justify-content-end navbar-right">
+  <li>
+    <div class="dropdown navbar-right-dropdown">
+        <%= link_to "https://www.instagram.com/lacuadrillalibreria/", target:"_blank", class:"d-none d-xl-inline-block navbar-right-dropdown-toggle insta", type:"button", id:"account-button" do %>
+          <i class="fab fa-instagram"></i>
+        <% end %>
+        <%= link_to "https://www.instagram.com/lacuadrillalibreria/", target:"_blank", class:"d-xl-none insta2", type:"button", id:"account-button" do %>
+          <i class="fab fa-instagram"></i>
+        <% end %>
+    </div>
+  </li>
+
+  <li>
+    <div class="navbar-right-search-menu">
+      <button type="button" class="navbar-right-dropdown-toggle search-icons" aria-label="<%= Spree.t('nav_bar.show_search')%>">
+        <%= icon(name: 'magnifying-glass',
+                 classes: 'd-none d-xl-inline-block',
+                 width: 36,
+                 height: 36)  %>
+
+        <%= icon(name: 'magnifying-glass',
+                 classes: 'd-xl-none',
+                 width: 24,
+                 height: 24)  %>
+      </button>
+
+      <div id="search-dropdown" class="p-0 px-md-4 py-md-2 w-100 shadow navbar-right-search-menu-dropdown hide-on-esc">
+        <%= render partial: 'spree/shared/search' %>
+      </div>
+    </div>
+  </li>
+
+  <li id="link-to-cart">
+    <%= render 'spree/shared/cart', class: 'd-none d-xl-inline-block cart-icon--xl', size: 36, item_count: 0 %>
+    <%= render 'spree/shared/cart', class: 'd-xl-none', size: 24, item_count: 0 %>
+  </li>
+</ul>
