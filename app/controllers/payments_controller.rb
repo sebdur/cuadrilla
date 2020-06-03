@@ -3,13 +3,11 @@ class PaymentsController < ApplicationController
   require 'base64'
   
   #before_action :prepare_webpay
-  def prepare_webpay
-  	 @payment = Payment.new(user_id: 1, amount: 10000, description: 'some text', payment_method_id: 1)
-  end
+  
   
   def create
 		if !params[:payment][:webpay_amount].nil? && (webpay_payment = params[:payment][:webpay_amount].to_i) > 0  
-			payment = Payment.prepare_webpay(payment_params, current_spree_user, webpay_payment) 
+			payment = Payment.prepare_webpay(payment_params) 
 			result = WebpayInit.init_transaction(payment, request.base_url.to_s) 
 			if(result['error_desc'] == 'TRX_OK')
 				token = result['token']
@@ -45,7 +43,7 @@ class PaymentsController < ApplicationController
   private
   
   def payment_params
-  	params.require(:payment).permit(:payment_amount, :webpay_amount)
+  	params.require(:payment).permit(:webpay_amount)
   end
 
 end

@@ -1,9 +1,5 @@
-require 'webpaymallnormal'
 require 'webpaynormal'
-require 'webpaynullify'
-require 'webpaycapture'
-require 'webpayoneclick'
-require 'webpaycomplete'
+
 
 class Webpay
 

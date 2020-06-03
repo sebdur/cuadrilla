@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'payments/webpay_success'
-  get 'payments/webpay_error'
-  get 'payments/webpay_nullify'
+ 
   resources :payments
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to
