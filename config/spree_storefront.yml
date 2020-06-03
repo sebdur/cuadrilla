@@ -6,3 +6,4 @@ default:
     - title: Nosotros
 
     - title: Contacto
+      url: /contact-us
