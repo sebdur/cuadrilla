@@ -20,7 +20,7 @@ editorial_prop = Spree::Property.where(name: 'editorial', presentation: 'Editori
 autor_prop = Spree::Property.where(name: 'autor', presentation: 'Autor').first_or_create
 genero_prop = Spree::Property.where(name: 'genero', presentation: 'Género').first_or_create
 
-sku = 50000 
+sku = 70000 
 
 CSV.foreach(Rails.root.join('lib/catalogo2.csv'), headers: true, col_sep: ';' ) do |row|
   

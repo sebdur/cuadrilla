@@ -1,0 +1,64 @@
+<section class="content-header">
+  <h1>
+    Detalle de pago
+    <small>Revise el detalle de su pago. Muchas gracias por preferirnos.</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>Mi cuenta</li>
+    <li class="active">Detalle del pago</li>
+  </ol>
+</section>
+<div class="container-fluid box box-success table-pad table-responsive">
+    <div class="row">
+    <% data = @payment.webpay_data.gsub('[','').gsub(']','').gsub('"','').split(',') %>
+      <table class="table table-striped ">
+        <tbody>
+            <tr>
+                <td>Número de pago</td>
+                <td><%= @payment.id %></td>
+            </tr>
+            <tr>
+                <td>Monto</td>
+                <td><%= number_to_currency(@payment.amount, precision: 0, unit: "$ ", delimiter: ".")%></td>           
+            <tr>
+            <tr>
+                <td>Código de autorización de transbank</td>
+                <td><%= data[4] %></td>       
+            </tr>
+            <tr>
+                <td>Fecha de transacción</td>
+                <td><%unless data[7].nil?%>  <%=data[7].split('T')[0]%><% end %></td>
+            </tr>
+            <tr>
+                <td>Tipo de pago</td>
+                <td>
+                    <%= 'Débito' if data[5].to_s.strip == 'VD' %>    
+                    <%= 'Crédito' if data[5].to_s.strip != 'VD' %>    
+                </td>       
+            </tr>            
+            <tr>       
+                <td>Tipo de cuota</td>
+                <td>
+                    <%= 'Venta Débito' if data[5].to_s.strip == 'VD' %>
+                    <%= 'Sin Cuotas' if data[5].to_s.strip == 'VN' %>
+                    <%= 'Cuotas normales' if data[5].to_s.strip == 'VC' %>
+                    <%= 'Sin interés' if data[5].to_s.strip == 'SI' %>
+                    <%= 'Sin interés' if data[5].to_s.strip == 'S2' %>
+                    <%= 'Sin interés' if data[5].to_s.strip == 'NC' %>
+                </td>  
+            </tr>
+            <% if data[10]!= " " %>
+                <tr>
+                    <td>Número de cuotas</td>
+                    <td><%= data[10] %></td>          
+                </tr>            
+            <% end %>
+            <tr>
+                <td>Número de tarjeta (últimos 4 digitos)</td>
+                <td><%= data[2] %></td>
+            </tr>   
+        </tbody>
+      </table>         
+    </div>
+</div>
+

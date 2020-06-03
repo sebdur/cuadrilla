@@ -1,0 +1,9 @@
+<!-- PAGO CON WEBPAY -->
+<div id="webpay-row" class="container-fluid" align="center">
+  <%= form_for(@payment, html: {name: 'new_payment', class: "form-inline"}) do |f| %>
+    <%= image_tag('webpay_logo.png', alt: 'Logo WebPay', class: 'logo-webpay')%><br>
+    <input id="payment_amount" type="text" class="form-control" required='true' name="payment[webpay_amount]">
+    <button class="btn btn-success">Pagar con WebPay</button> 
+  <% end %>
+</div>
+<!-- FIN PAGO CON WEBPAY -->
