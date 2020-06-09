@@ -4,6 +4,6 @@ default:
       url: /products
 
     - title: Nosotros
+      url: /about
 
     - title: Contacto
-      url: /contact-us

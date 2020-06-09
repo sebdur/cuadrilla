@@ -34,9 +34,6 @@ gem 'spree_gateway', '~> 3.7'
 
 gem 'signer', '~> 1.4.2'
 gem 'savon', '~> 2.11.1'
-
-
-gem 'spree_contact_us', github: 'spree-contrib/spree_contact_us'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
 
 group :development, :test do
