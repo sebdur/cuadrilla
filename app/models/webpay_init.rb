@@ -3,10 +3,12 @@ class WebpayInit
    def self.init_transaction(payment, base_url)
                   puts 'start init transaction'
                   self.init_webpay(base_url)
-                  amount = payment.amount.to_i
+                  amount = payment[:amount].to_i #reemplazar por metodo payment.amount
                   sessionId = rand(1111111..9999999).to_s
+                  
                   payment.update(tbk_transaction_id: sessionId)
-                  return @webpay.getNormalTransaction.initTransaction(amount, payment.id, sessionId, @urlReturn, @urlFinal)
+                  puts 'hola este es el: ' + payment.to_s
+                  return @webpay.getNormalTransaction.initTransaction(amount, payment[:id], sessionId, @urlReturn, @urlFinal)
    end
 
    def self.get_transaction_result(token, base_url)
@@ -21,7 +23,7 @@ class WebpayInit
 
    def self.nullify_transaction(token, base_url, authorizationCode, authorizedAmount, buyOrder, nullifyAmount)
             self.init_webpay(base_url)
-            return @webpay.getNullifyTransaction.nullify(authorizationCode, authorizedAmount, buyOrder, nullifyAmount, Rails.application.secrets.webpay_commerce_code.to_s)
+            return @webpay.getNullifyTransaction.nullify(authorizationCode, authorizedAmount, buyOrder, nullifyAmount, Rails.application.credentials.webpay_commerce_code.to_s)
    end           
 
 
@@ -29,7 +31,7 @@ class WebpayInit
   #Logger
   def self.log(action, id, type, payload_text, sessionId)
     puts 'Saving webpay logs'
-    file = Rails.application.secrets.webpay_logger
+    file = Rails.application.credentials.webpay_logger
     puts 'archivo: ' + file
     directory = Rails.root.join('log', file)
     time = Time.now.to_s
@@ -44,12 +46,12 @@ class WebpayInit
         f << "\t" + "[wSTransactionType] => \'TR_NORMAL_WS\'" + "\n"
         f << "\t [buyOrder] => " + id.to_s.split(':')[1].to_s + "\n"
         f << "\t [sessionId] =>" + sessionId.to_s + "\n"
-        f << "\t [returnURL] => https://frutaconsentido.com" + Rails.application.secrets.webpay_return_url.to_s + "\n"
-        f << "\t [finalURL] https://frutaconsentido.com" + Rails.application.secrets.webpay_final_url.to_s + "\n"
+        f << "\t [returnURL] => https://frutaconsentido.com" + Rails.application.credentials.webpay_return_url.to_s + "\n"
+        f << "\t [finalURL] https://frutaconsentido.com" + Rails.application.credentials.webpay_final_url.to_s + "\n"
         f << "\t [transactionDetails]" + "\n"
         f << "\t (" + "\n"
         f << "\t\t [amount] => " + response_document.xpath("//amount").text.to_s + "\n"
-        f << "\t\t [commerceCode] => " + Rails.application.secrets.webpay_commerce_code.to_s + "\n"
+        f << "\t\t [commerceCode] => " + Rails.application.credentials.webpay_commerce_code.to_s + "\n"
         f << "\t\t [buyOrder] =>" + id.to_s.split(':')[1].to_s + "\n"
         f << "\t )" + "\n"
       elsif  type.to_s == "response" && action.to_s == "init_transaction"
@@ -124,19 +126,19 @@ class WebpayInit
   def self.init_webpay(base_url)
           libwebpay = Libwebpay.new
           config = libwebpay.getConfiguration
-          config.commerce_code = Rails.application.secrets.webpay_commerce_code
-          config.environment = Rails.application.secrets.environment
-          config.private_key = OpenSSL::PKey::RSA.new(File.read(Rails.application.secrets.webpay_client_private_key))
-          config.public_cert = OpenSSL::X509::Certificate.new(File.read(Rails.application.secrets.webpay_client_certificate))
-          config.webpay_cert = OpenSSL::X509::Certificate.new(File.read(Rails.application.secrets.webpay_tbk_certificate))        
-          puts 'commerce code: ' + Rails.application.secrets.webpay_commerce_code.to_s
-          puts 'env: ' + Rails.application.secrets.environment.to_s
-          puts 'private_key: ' + OpenSSL::PKey::RSA.new(File.read(Rails.application.secrets.webpay_client_private_key)).to_s
-          puts 'public_cert: ' + OpenSSL::X509::Certificate.new(File.read(Rails.application.secrets.webpay_client_certificate)).to_s
-          puts 'webpay_cert: ' + OpenSSL::X509::Certificate.new(File.read(Rails.application.secrets.webpay_tbk_certificate)).to_s
+          config.commerce_code = Rails.application.credentials.webpay_commerce_code
+          config.environment = Rails.application.credentials.environment
+          config.private_key = OpenSSL::PKey::RSA.new(File.read(Rails.application.credentials.webpay_client_private_key))
+          config.public_cert = OpenSSL::X509::Certificate.new(File.read(Rails.application.credentials.webpay_client_certificate))
+          config.webpay_cert = OpenSSL::X509::Certificate.new(File.read(Rails.application.credentials.webpay_tbk_certificate))        
+          puts 'commerce code: ' + Rails.application.credentials.webpay_commerce_code.to_s
+          puts 'env: ' + Rails.application.credentials.environment.to_s
+          puts 'private_key: ' + OpenSSL::PKey::RSA.new(File.read(Rails.application.credentials.webpay_client_private_key)).to_s
+          puts 'public_cert: ' + OpenSSL::X509::Certificate.new(File.read(Rails.application.credentials.webpay_client_certificate)).to_s
+          puts 'webpay_cert: ' + OpenSSL::X509::Certificate.new(File.read(Rails.application.credentials.webpay_tbk_certificate)).to_s
           @webpay = libwebpay.getWebpay(config)
-          @urlReturn = base_url + Rails.application.secrets.webpay_return_url.to_s
-          @urlFinal = base_url + Rails.application.secrets.webpay_final_url.to_s
+          @urlReturn = base_url + Rails.application.credentials.webpay_return_url.to_s
+          @urlFinal = base_url + Rails.application.credentials.webpay_final_url.to_s
   end               
 
 end

@@ -7,7 +7,7 @@ class PaymentsController < ApplicationController
   
   def create
 		if !params[:payment][:webpay_amount].nil? && (webpay_payment = params[:payment][:webpay_amount].to_i) > 0  
-			payment = Payment.prepare_webpay(payment_params) 
+			payment = Payment.prepare_webpay(payment_params) #guardar el payment en la BD
 			result = WebpayInit.init_transaction(payment, request.base_url.to_s) 
 			if(result['error_desc'] == 'TRX_OK')
 				token = result['token']

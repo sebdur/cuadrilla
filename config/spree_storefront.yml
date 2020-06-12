@@ -7,3 +7,4 @@ default:
       url: /about
 
     - title: Contacto
+      url: /messages

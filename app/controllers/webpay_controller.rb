@@ -12,7 +12,7 @@ class WebpayController < ApplicationController
         state = result['error_desc'].to_s
         accountingdate 		= result['accountingdate'].to_s
         buyorder 					= result['buyorder'].to_s
-        sharesnumber 					= result['sharesnumber'].to_s
+        sharesnumber 			= result['sharesnumber'].to_s
         cardnumber 				= result['cardnumber'].to_s
         amount 						= result['amount'].to_s
         commercecode 			= result['commercecode'].to_s
