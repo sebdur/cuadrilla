@@ -53,14 +53,6 @@
               <% end %>
             </div>
 
-            <% if Spree::Frontend::Config[:coupon_codes_enabled] %>
-              <%= render 'coupon_code',
-                promotion: @order.valid_coupon_promotions.first,
-                order_form: order_form,
-                classes: ''
-              %>
-            <% end %>
-
             <div class="text-right shopping-cart-total d-lg-none">
               <div class="row no-gutters align-items-center">
                 <div class="text-uppercase shopping-cart-total-text col-8 mr-0">

@@ -5,6 +5,12 @@
     data-src="<%= asset_path('homepage/hero.JPG') %>"
 </div>
 
+<div class="hero-content">
+  <div>
+    <%= link_to Spree.t('homepage.shop_now'), spree.products_path, class: 'btn btn-primary spree-btn px-5' %>
+  </div>
+</div>
+
 <div data-product-carousel data-product-carousel-taxon-id='bestsellers' class="my-3"></div>
 
 <div data-product-carousel data-product-carousel-taxon-id='trending' class="mb-3"></div>
