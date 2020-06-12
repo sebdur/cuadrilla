@@ -36,10 +36,9 @@ class WebpayNormal
     end
 
 
-    #######################################################
+    
     def initTransaction(amount, buyOrder, sessionId, urlReturn, urlFinal)
-
-
+      puts 'hola este es el: ' + amount.to_s
       initInput ={
           "wsInitTransactionInput" => {
               "wSTransactionType" => "TR_NORMAL_WS",
