@@ -1,0 +1,60 @@
+<div class="container text-center">
+  <div id="no-taxon-banner">
+    <div class="mt-2">
+      <%= lazy_image(
+        src: asset_path('homepage/bannercontact.png'),
+        alt: 'products-banner',
+        width: 1110,
+        height: 300,
+        class: 'w-100 d-none d-md-block'
+      ) %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6 text-left">
+    <p>Déjanos tus datos y te contactaremos a la brevedad.</p>
+    <p>E-mail: contacto@cuadrilla.cl</p>
+    <p>Teléfono: 228456347</p>
+    </div>
+
+    <div class="col-md-6">
+    <%= form_for @message, url: messages_path, method: :post do |f| %>
+      <div class="row">
+        <div class="col-md-6">
+        <div class="form-group">
+         <%= f.label :name, "Nombre" %>
+         <p><%= f.text_field :name, class:"form"%></p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :phone_number, "Teléfono" %>
+          <p><%= f.telephone_field :phone_number, class:"form" %></p>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+       <div class="form-group">
+         <%= f.label :email %>
+         <p><%= f.email_field :email, class:"form"%></p>
+       </div>
+     </div>
+     </div>
+     <div class="row">
+       <div class="col-md-12">
+      <div class="field">
+       <%= f.label :body, "Mensaje" %>
+       <p><%= f.text_area :body, class:"form", rows: '9'%></p>
+      </div>
+
+      <div class="field mb-4">
+       <%= f.submit 'ENVIAR', class: 'btn btncuadrilla'%>
+      </div>
+    </div>
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@
   src: url('/assets/American_Typewriter.ttf');
 }
 
-.insta {
+.insta{
   font-size: 2.5em;
   padding-right: 0.2em;
 }
@@ -11,7 +11,19 @@
 .insta2{
   font-size: 1.6em;
   color: inherit;
-  padding-right: 0.1em;
+  padding-right: 0.2em;
+}
+
+.form{
+  width: 100%;
+  height: auto;
+  border-width: thin;
+  border-style: solid;
+  border-color: #c5a37b;
+}
+
+.btncuadrilla{
+  background-color: #c5a37b;
 }
 
 a:hover{
