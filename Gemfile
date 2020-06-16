@@ -34,7 +34,6 @@ gem 'spree_gateway', '~> 3.7'
 
 gem 'signer', '~> 1.4.2'
 gem 'savon', '~> 2.11.1'
-gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
 gem 'mailgun-ruby'
 
 group :development, :test do
