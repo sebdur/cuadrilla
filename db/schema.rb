@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_223417) do
+ActiveRecord::Schema.define(version: 2020_06_18_114146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,16 @@ ActiveRecord::Schema.define(version: 2020_06_02_223417) do
     t.string "tbk_token", limit: 255
     t.string "state", limit: 255
     t.string "webpay_data", limit: 255
+  end
+
+  create_table "quote_costs", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.integer "cost"
+    t.integer "service_delivery_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "region"
   end
 
   create_table "spree_addresses", id: :serial, force: :cascade do |t|
