@@ -37,6 +37,6 @@ require 'csv'
 # end
 QuoteCost.delete_all
 CSV.foreach(Rails.root.join('lib/cotizador.csv'), headers: true, col_sep: ',' ) do |row|
-  q = QuoteCost.create name: row[0], code: row[1], cost: row[2], service_delivery_code: row[3], region: row[4]
+  q = QuoteCost.create name: row[0], code: row[1], cost: row[3], service_delivery_code: row[4], region: row[2]
   q.save
 end
