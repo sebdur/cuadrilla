@@ -1,0 +1,2 @@
+class QuoteCost < ApplicationRecord
+end
