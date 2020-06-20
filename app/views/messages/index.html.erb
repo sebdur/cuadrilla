@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container">
   <div id="no-taxon-banner">
     <div class="mt-2">
       <%= lazy_image(
@@ -10,51 +10,48 @@
       ) %>
     </div>
   </div>
-
-  <div class="row mt-5">
-    <div class="col-md-6 text-left">
-    <p>Déjanos tus datos y te contactaremos a la brevedad.</p>
-    <p>E-mail: contacto@cuadrilla.cl</p>
-    <p>Teléfono: 228456347</p>
-    </div>
-
-    <div class="col-md-6">
+  <div class="d-flex justify-content-center mt-5">
+    <h3>Déjanos tus datos y te contactaremos a la brevedad</h3>
+  </div>
+  <div class="d-flex justify-content-center my-2">
+    <h6>E-mail: contacto@cuadrilla.cl</h6>
+  </div>
+  <div class="d-flex justify-content-center my-2">
+    <h6>Teléfono: 228456347</h6>
+  </div>
+    <div class="d-flex justify-content-center my-5">
     <%= form_for @message, url: messages_path, method: :post do |f| %>
       <div class="row">
         <div class="col-md-6">
         <div class="form-group">
-         <%= f.label :name, "Nombre" %>
-         <p><%= f.text_field :name, class:"form"%></p>
+         <p><%= f.text_field :name, class:'spree-flat-input', placeholder:'nombre'%></p>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <%= f.label :phone_number, "Teléfono" %>
-          <p><%= f.telephone_field :phone_number, class:"form" %></p>
+          <p><%= f.telephone_field :phone_number, class:'spree-flat-input', placeholder:'teléfono' %></p>
         </div>
       </div>
       </div>
       <div class="row">
         <div class="col-md-12">
        <div class="form-group">
-         <%= f.label :email %>
-         <p><%= f.email_field :email, class:"form"%></p>
+         <p><%= f.email_field :email, class:'spree-flat-input', placeholder:'email'%></p>
        </div>
      </div>
      </div>
      <div class="row">
        <div class="col-md-12">
       <div class="field">
-       <%= f.label :body, "Mensaje" %>
-       <p><%= f.text_area :body, class:"form", rows: '9'%></p>
+       <p><%= f.text_area :body, class:'spree-flat-input', placeholder:'mensaje', rows: '5'%></p>
       </div>
 
       <div class="field mb-4">
-       <%= f.submit 'ENVIAR', class: 'btn btncuadrilla'%>
+       <%= f.submit 'ENVIAR', class: 'btn btn-primary btn-block spree-btn mt-2'%>
       </div>
     </div>
     </div>
     <% end %>
     </div>
-  </div>
+
 </div>
