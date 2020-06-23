@@ -29,7 +29,6 @@ module Spree
 					contact_number = @order.bill_address.phone
 					contact_email = @order.email
 					@shipping_request = ApiShipping.new.envio(commune, commune_code, name_address, num_address, observation, contact_name, contact_number, contact_email)
-					byebug
 				end
       else
         render :edit

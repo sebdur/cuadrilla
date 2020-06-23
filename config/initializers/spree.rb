@@ -13,6 +13,7 @@
 Spree.config do |config|
   config.logo = 'lacuadrilla2.png'
   config.admin_interface_logo = 'lacuadrilla2.png'
+  config.admin_show_version = false
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   config.track_inventory_levels = false

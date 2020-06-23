@@ -14,18 +14,20 @@
   padding-right: 0.2em;
 }
 
-.form{
-  width: 100%;
-  height: auto;
-  border-width: thin;
-  border-style: solid;
-  border-color: #c5a37b;
-}
-
-.btncuadrilla{
-  background-color: #c5a37b;
-}
 
 a:hover{
   color: inherit;
+}
+
+.form{
+  height: auto;
+  width: 37vw;
+}
+
+main{
+  min-height: calc(100vh - 129px)
+}
+
+.ocult{
+  display: none;
 }
