@@ -4,8 +4,11 @@ class MyStore::Calculator::Shipping::CustomShippingCalculator < Spree::ShippingC
   end
 
   def compute_package(package)
-    commune = package.order.bill_address.address2
-    quote_amount = QuoteCost.find_by(name: commune).cost
+    #customizacion de calculadora toma la comuna para
+    commune = package.order.bill_address.address2.upcase
+    if QuoteCost.exists?(name: commune)
+      quote_amount = QuoteCost.find_by(name: commune).cost
+    end
   end
 
   def avaible?(order)
