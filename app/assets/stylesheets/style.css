@@ -28,6 +28,6 @@ main{
   min-height: calc(100vh - 129px)
 }
 
-.ocult{
-  display: none;
+.btncheck{
+  padding: 0em 21em;
 }

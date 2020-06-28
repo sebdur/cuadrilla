@@ -8,6 +8,6 @@
 -%>
 <% unless current_page.last? %>
   <li class="last next page-item"><%# "next" class present for border styling in twitter bootstrap %>
-    <%= link_to_unless current_page.last?, raw(t 'views.pagination.last'), url, remote: remote, class: 'page-link' %>
+    <%= link_to_unless current_page.last?, "Última »", url, remote: remote, class: 'page-link' %>
   </li>
 <% end %>

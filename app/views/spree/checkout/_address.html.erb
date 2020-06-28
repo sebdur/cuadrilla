@@ -19,7 +19,7 @@
     <div class="col-12 mb-4" data-hook="<%= address_type %>_fieldset_wrapper">
       <div id="<%= address_type %>" data-hook>
         <h5 class="text-uppercase checkout-content-header">
-          <%= Spree.t(address_type + '_address') %>
+          Dirección de envío
         </h5>
         <% if address_type == 'shipping' %>
           <div class="spree-checkbox-container checkout-content-billing-checkbox" data-hook="use_billing">
@@ -27,7 +27,7 @@
               <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address?, { class: 'form-check-input'} %>
               <%= label_tag :order_use_billing, nil, id: 'use_billing' %>
             </div>
-            <%= label_tag :order_use_billing, Spree.t(:use_billing_address), class: 'spree-checkbox-label' %>
+            <%= label_tag :order_use_billing, "Usar dirección de envío", class: 'spree-checkbox-label' %>
           </div>
         <% end %>
         <% if @addresses.present? %>
@@ -60,7 +60,7 @@
               address: Spree::Address.default,
               form: form
             } %>
-            <p class="text-right text-uppercase checkout-content-inner-field">*<%= Spree.t(:required_fields) %></p>
+            <p class="text-right text-uppercase checkout-content-inner-field">*Campos Requeridos</p>
           </div>
         <% end %>
       </div>

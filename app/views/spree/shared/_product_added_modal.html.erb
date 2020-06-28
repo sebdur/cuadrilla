@@ -29,7 +29,7 @@
                        height: 68) %>
             </div>
             <div class="col-8 col-sm-6 col-lg-4 product-added-modal-message">
-              <%= Spree.t(:added_to_cart) %>
+              Agregado a tu carro de compras!
             </div>
           </div>
           <div class="row pt-5 justify-content-center align-items-center product-added-modal-product">
@@ -48,14 +48,14 @@
           <div class="row pb-4 justify-content-center">
             <div class="col-12 col-lg-8">
               <%= link_to spree.checkout_path, class: 'btn btn-primary w-100 font-weight-bold text-uppercase product-added-modal-button', method: :get do %>
-                <%= Spree.t('pdp.checkout') %>
+                Pagar
               <% end %>
             </div>
           </div>
           <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
               <%= link_to spree.cart_path, class: 'btn btn-outline-primary w-100 font-weight-bold text-uppercase product-added-modal-button' do %>
-                <%= Spree.t('pdp.view_cart') %>
+                Ver Carro
               <% end %>
             </div>
           </div>
