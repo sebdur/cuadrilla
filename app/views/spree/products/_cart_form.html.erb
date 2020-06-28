@@ -35,7 +35,7 @@
     <% end %>
 
     <div class="text-center text-md-left add-to-cart-form-general-availability text-uppercase">
-      <%= Spree.t(:availability) %>:
+      <%= "Disponibilidad" %>:
       <% if !is_product_available_in_currency %>
         <%= render 'cart_form_availability_templates', type: 'not-available-in-currency' %>
       <% elsif default_variant.in_stock? %>
@@ -72,7 +72,7 @@
         </div>
 
         <%= button_tag class: 'btn btn-primary w-100 text-uppercase font-weight-bold add-to-cart-button', id: 'add-to-cart-button', type: :submit, disabled: true do %>
-          <%= Spree.t(:add_to_cart) %>
+          Agregar al carro
         <% end %>
       </div>
     <% end %>

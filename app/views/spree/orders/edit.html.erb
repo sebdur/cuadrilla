@@ -2,20 +2,20 @@
 
 <div data-hook="cart_container" class="container shopping-cart">
 
-  <h1 class="text-uppercase shopping-cart-header mt-5 text-center"><%= Spree.t('cart_page.header') %></h1>
+  <h1 class="text-uppercase shopping-cart-header mt-5 text-center">Carro de compras</h1>
 
   <% if @order.line_items.empty? %>
     <div data-hook="empty_cart" class="shopping-cart-empty">
       <div class="d-flex flex-column justify-content-between h-100">
         <div class="d-flex flex-column align-items-center">
           <%= icon(name: 'empty-cart',
-                   classes: 'shopping-cart-empty-image',
+                   classes: 'shopping-cart-empty-image mr-4',
                    width: 83,
                    height: 83)  %>
 
-          <p class="text-center shopping-cart-empty-info"><%= Spree.t('cart_page.empty_info').html_safe %></p>
+          <p class="text-center shopping-cart-empty-info"><%= "Tu carro esta vacio.".html_safe %></p>
         </div>
-        <%= link_to Spree.t(:continue_shopping), spree.products_path, class: 'btn btn-primary text-uppercase font-weight-bold shopping-cart-empty-continue-link' %>
+        <%= link_to "Volver a la tienda", spree.products_path, class: 'btn btn-primary text-uppercase font-weight-bold shopping-cart-empty-continue-link' %>
       </div>
     </div>
   <% else %>
@@ -28,13 +28,13 @@
 
           <div class="d-lg-flex flex-wrap justify-content-between">
             <div class="text-uppercase d-none d-lg-block mt-3">
-              <%= link_to Spree.t(:continue_shopping), spree.products_path, class: 'shopping-cart-buttons-continue' %>
+              <%= link_to "Volver a la tienda", spree.products_path, class: 'shopping-cart-buttons-continue' %>
             </div>
 
             <div class="text-right shopping-cart-total d-none d-lg-block">
               <div class="row no-gutters align-items-center">
                 <div class="text-uppercase shopping-cart-total-text col-8 mr-0">
-                  <%= Spree.t(:subtotal) %>
+                  Subtotal
                 </div>
                 <div class="shopping-cart-total-amount col align-self-end">
                   <%= order_form.object.display_item_total %>
@@ -56,13 +56,13 @@
               <%= render 'coupon_code',
                 promotion: @order.valid_coupon_promotions.first,
                 order_form: order_form,
-                classes: ''
+                classes: 'hidden'
               %>
             <% end %>
             <div class="text-right shopping-cart-total d-lg-none">
               <div class="row no-gutters align-items-center">
                 <div class="text-uppercase shopping-cart-total-text col-8 mr-0">
-                  <%= Spree.t(:subtotal) %>
+                  Subtotal
                 </div>
                 <div class="shopping-cart-total-amount col align-self-end">
                   <%= order_form.object.display_item_total %>
@@ -80,8 +80,8 @@
               <% end %>
             </div>
 
-            <div class="d-flex flex-column text-center shopping-cart-buttons" data-hook="cart_buttons">
-              <%= link_to Spree.t('cart_page.checkout'), spree.checkout_path, class: 'btn btn-primary text-uppercase font-weight-bold cart-checkout-btn shopping-cart-buttons-checkout', id: 'checkout-link', method: :get %>
+            <div class="d-flex flex-column text-center col-md-12 btncheck mb-5" data-hook="cart_buttons">
+              <%= link_to "Pagar", spree.checkout_path, class: 'btn btn-primary text-uppercase font-weight-bold cart-checkout-btn shopping-cart-buttons-checkout', id: 'checkout-link', method: :get %>
               <span class="text-uppercase shopping-cart-buttons-or d-lg-none"><%= Spree.t(:or) %></span>
               <%= link_to Spree.t(:continue_shopping), spree.products_path, class: 'btn btn-outline-primary text-uppercase font-weight-bold d-lg-none shopping-cart-buttons-continue' %>
             </div>
