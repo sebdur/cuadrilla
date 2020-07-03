@@ -14,20 +14,41 @@
   padding-right: 0.2em;
 }
 
-
 a:hover{
   color: inherit;
-}
-
-.form{
-  height: auto;
-  width: 37vw;
 }
 
 main{
   min-height: calc(100vh - 129px)
 }
 
-.btncheck{
-  padding: 0em 21em;
+
+#toTop {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 10px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  background-color: #c5a37b;
+  color: #FFFFFF;
+  border-style: none;
+  font-size: 1em;
+}
+
+#loadPage{
+  display: block;
+  background: #ffffff;
+  color: #c5a37b;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+
+.spinner-border{
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 40%;
+  left: 48.3%;
 }
