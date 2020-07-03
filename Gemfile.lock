@@ -1,3 +1,21 @@
+PATH
+  remote: ../libwebpay
+  specs:
+    libwebpay (3.0.0.pre.beta)
+      nokogiri (~> 1.6, >= 1.6.7.2)
+      savon (~> 2)
+      signer
+
+PATH
+  remote: ../spree_tbk
+  specs:
+    spree_tbk (0.0.1.alpha)
+      libwebpay
+      spree_api (>= 3.2.0, < 5.0)
+      spree_backend (>= 3.2.0, < 5.0)
+      spree_core (>= 3.2.0, < 5.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -433,6 +451,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   jbuilder (~> 2.7)
+  libwebpay!
   listen (~> 3.2)
   mailgun-ruby
   pg (>= 0.18, < 2.0)
@@ -445,6 +464,7 @@ DEPENDENCIES
   spree (~> 4.1)
   spree_auth_devise (~> 4.1)
   spree_gateway (~> 3.7)
+  spree_tbk!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
