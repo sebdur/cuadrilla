@@ -7,7 +7,7 @@ class ApiShipping
   API_KEY_ENVIO = '6da83444ca8a4d7a993161e9b39effb8'
 
 
-  def envio(commune, commune_code, name_address, num_address, observation, contact_name, contact_number, contact_email)
+  def envio(commune, commune_code, name_address, num_address, observation, contact_name, contact_number, contact_email, service_delivery_code)
 
     url = URI("https://testservices.wschilexpress.com/transport-orders/api/v1.0/transport-orders")
 
@@ -19,7 +19,7 @@ class ApiShipping
     request['Cache-Control'] = 'no-cache'
     request["Content-Type"] = "application/json"
     request.body = {  header: {
-                                certificateNumber: 13850049,
+                                certificateNumber: 0,
                                 customerCardNumber: "18578680",
                                 countyOfOriginCoverageCode: "PROV",
                                 labelType: 2,
@@ -55,7 +55,7 @@ class ApiShipping
                                   {
                                     name: "Eric Olivares",
                                     phoneNumber: "+56993813039",
-                                    mail: "contact_email",
+                                    mail: "contacto@cuadrilla.cl",
                                     contactType: "R"
                                   },
                                   {
@@ -71,10 +71,10 @@ class ApiShipping
                                     height: "20",
                                     width: "30",
                                     length: "30",
-                                    serviceDeliveryCode: "3",
+                                    serviceDeliveryCode: service_delivery_code,
                                     productCode: "3",
                                     deliveryReference: "TEST-EOC-17",
-                                    groupReference: "GRUPO",
+                                    groupReference: "GRUPO_libro_la_cuadrilla",
                                     declaredValue: "5",
                                     declaredContent: "string",
                                     extendedCoverageAreaIndicator: false,

@@ -8,6 +8,9 @@ class MyStore::Calculator::Shipping::CustomShippingCalculator < Spree::ShippingC
     commune = package.order.bill_address.address2.upcase
     if QuoteCost.exists?(name: commune)
       quote_amount = QuoteCost.find_by(name: commune).cost
+    else
+      # flash[:warning] = "Hubo un problema enviando tu mensaje. Por favor intenta otra vez"
+      # flash[:error] = "lala"
     end
   end
 
