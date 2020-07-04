@@ -5,8 +5,6 @@ ruby '2.6.3'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'libwebpay', path: "../libwebpay" 
-gem 'spree_tbk' , path: "../spree_tbk"
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'

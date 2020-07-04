@@ -52,3 +52,12 @@ main{
   top: 40%;
   left: 48.3%;
 }
+
+.imgs{
+  height: auto;
+  width: 100%;
+}
+
+.logos{
+  padding: 0em 5em;
+}
