@@ -1,7 +1,7 @@
 <div class='order-show container d-flex flex-column align-items-center flex-lg-wrap flex-lg-row justify-content-center' id="order_summary" data-hook>
   <% if order_just_completed?(@order) %>
     <%= icon(name: 'check-mark-circle',
-             classes: 'd-block d-lg-none mx-auto order-show-check-mark',
+             classes: 'text-success d-block d-lg-none mx-auto order-show-check-mark',
              width: 56,
              height: 56) %>
     <%= icon(name: 'check-mark-circle',
@@ -23,10 +23,10 @@
       </dd>
     </div>
     <div>
-      <dt class="text-uppercase text-center text-lg-left"><%= Spree.t(:billing_address) %></dt>
+      <!--<dt class="text-uppercase text-center text-lg-left"><%= Spree.t(:billing_address) %></dt>
       <dd class="text-center text-lg-left">
         <%= render 'spree/shared/address', address: @order.bill_address %>
-      </dd>
+      </dd>-->
     </div>
     <div>
       <dt class="text-uppercase text-center text-lg-left"><%= Spree.t(:shipping) %></dt>

@@ -4,23 +4,26 @@
 <!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
-  <head data-hook="inside_head">
-    <%= render partial: 'spree/shared/head' %>
-  </head>
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-    <%= render partial: 'spree/shared/header' %>
-    <div id="overlay" class="overlay hide-on-esc"></div>
+<head data-hook="inside_head">
+  <%= render partial: 'spree/shared/head' %>
+</head>
+<body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+  <%= render partial: 'spree/shared/header' %>
+  <div id="overlay" class="overlay hide-on-esc"></div>
+  <div id="loadPage" class="text-center" role="status">
+    <span class="spinner-border"></span>
+  </div>
 
-    <div data-hook>
-      <main id="content" data-hook>
-        <%= flash_messages %>
-        <%= yield %>
-      </main>
+  <div data-hook>
+    <main id="content" data-hook>
+      <%= flash_messages %>
+      <%= yield %>
+    </main>
+    <button id="toTop" class="btn black"><i class="fas fa-chevron-up"></i></button>
+    <%= yield :templates %>
+  </div>
 
-      <%= yield :templates %>
-    </div>
-
-    <%= render partial: 'spree/shared/copyright' %>
-    <%= render 'spree/shared/translations' %>
-  </body>
+  <%= render partial: 'spree/shared/copyright' %>
+  <%= render 'spree/shared/translations' %>
+</body>
 </html>
