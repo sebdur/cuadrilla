@@ -1,55 +1,58 @@
-<div class="container text-center">
+<div class="container text-center mb-5">
   <div id="no-taxon-banner">
     <div class="mt-2">
       <%= lazy_image(
-        src: asset_path('homepage/bannercontact.png'),
-        alt: 'products-banner',
-        width: 1110,
-        height: 300,
-        class: 'w-100 d-none d-md-block'
+      src: asset_path('homepage/bannercontact.png'),
+      alt: 'products-banner',
+      width: 1110,
+      height: 300,
+      class: 'w-100 d-none d-md-block'
       ) %>
     </div>
   </div>
-  <div class="d-flex justify-content-center mt-5">
-    <h3>Déjanos tus datos y te contactaremos a la brevedad</h3>
-  </div>
-  <div class="d-flex justify-content-center my-2">
-    <h6>E-mail: contacto@cuadrilla.cl</h6>
-  </div>
-  <div class="d-flex justify-content-center my-2">
-    <h6>Teléfono: 228456347</h6>
-  </div>
-    <div class="d-flex justify-content-center my-3 px-5">
-    <%= form_for @message, url: messages_path, method: :post do |f| %>
-      <div class="row">
-        <div class="col-md-6">
-        <div class="form-group">
-         <p><%= f.text_field :name, class:'spree-flat-input text-center', placeholder:'nombre'%></p>
-        </div>
+  <div class="container">
+    <div class="mt-5 mb-4">
+      <h3>Déjanos tus datos y te contactaremos a la brevedad.</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mt-4">
+        <h5 class="my-5">E-mail: contacto@cuadrilla.cl</h5>
+        <h5 class="my-5">Teléfono: 228456347</h5>
+        <%= image_tag("lacuadrilla2.png", class: "imgs logos mt-4") %>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <p><%= f.telephone_field :phone_number, class:'spree-flat-input text-center', placeholder:'teléfono' %></p>
-        </div>
-      </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <p><%= f.email_field :email, class:'spree-flat-input text-center', placeholder:'email'%></p>
+      <div class="col-md-6 my-5">
+        <%= form_for @message, url: messages_path, method: :post do |f| %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <p><%= f.text_field :name, class:'spree-flat-input text-center', placeholder:'nombre'%></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <p><%= f.telephone_field :phone_number, class:'spree-flat-input text-center', placeholder:'teléfono' %></p>
+            </div>
           </div>
         </div>
-     </div>
-     <div class="row">
-       <div class="col">
-         <div class="field">
-           <p><%= f.text_area :body, class:'spree-flat-input text-center', placeholder:'mensaje', rows: '5'%></p>
-         </div>
-        <div class="field">
-          <%= f.submit 'ENVIAR', class: 'btn btn-primary btn-block spree-btn mt-2'%>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <p><%= f.email_field :email, class:'spree-flat-input text-center', placeholder:'email'%></p>
+            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <div class="field">
+              <p><%= f.text_area :body, class:'spree-flat-input text-center', placeholder:'mensaje', rows: '5'%></p>
+            </div>
+            <div class="field">
+              <%= f.submit 'ENVIAR', class: 'btn btn-primary btn-block spree-btn mt-4'%>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 </div>

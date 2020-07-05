@@ -10,7 +10,7 @@
 # Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
 
 require 'csv'
-#
+# poblar la bd con los productos + propiedades(autor,editorial,genero)
 # Spree::Product.delete_all
 # Spree::Property.delete_all
 # Spree::ProductProperty.delete_all
@@ -32,11 +32,29 @@ require 'csv'
 #
 #   p.save
 #
-#   sku += 10
+#   sku += 999999999999999999999999999999999999999999
 #
 # end
-QuoteCost.delete_all
-CSV.foreach(Rails.root.join('lib/cotizador.csv'), headers: true, col_sep: ',' ) do |row|
-  q = QuoteCost.create name: row[0], code: row[1], cost: row[3], service_delivery_code: row[4], region: row[2]
-  q.save
+
+#valores de envio poblando la bd
+
+# QuoteCost.delete_all
+# CSV.foreach(Rails.root.join('lib/cotizador.csv'), headers: true, col_sep: ',' ) do |row|
+#   q = QuoteCost.create name: row[0], code: row[1], cost: row[3], service_delivery_code: row[4], region: row[2]
+#   q.save
+# end
+
+
+#asignacion de taxon(genero) a su libro correspondiente
+
+generos = Spree::Taxon.all.pluck(:name)
+generos.each do |genero|
+  next if genero == "Generos"
+  libros = Spree::ProductProperty.where(property_id: 3, value: genero.upcase)
+  libros_genero = libros.pluck(:product_id)
+  taxon = Spree::Taxon.where(name: genero)
+  libros_genero.each do |libro|
+    next if libro == nil
+    Spree::Product.find(libro).taxons = taxon
+  end
 end
