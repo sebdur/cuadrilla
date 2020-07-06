@@ -50,6 +50,7 @@ require 'csv'
 generos = Spree::Taxon.all.pluck(:name)
 generos.each do |genero|
   next if genero == "Generos"
+  #tener cuidado con este metodo debido si hay cambioes en bd revisar que el property_id sea el correspondiente
   libros = Spree::ProductProperty.where(property_id: 3, value: genero.upcase)
   libros_genero = libros.pluck(:product_id)
   taxon = Spree::Taxon.where(name: genero)
