@@ -47,14 +47,17 @@ require 'csv'
 
 #asignacion de taxon(genero) a su libro correspondiente
 
-#generos = Spree::Taxon.all.pluck(:name)
-#generos.each do |genero|
-#  next if genero == "Generos"
-#  libros = Spree::ProductProperty.where(property_id: 3, value: genero.upcase)
-#  libros_genero = libros.pluck(:product_id)
-#  taxon = Spree::Taxon.where(name: genero)
-#  libros_genero.each do |libro|
-#    next if libro == nil
-#    Spree::Product.find(libro).taxons = taxon
-#  end
-#end
+
+generos = Spree::Taxon.all.pluck(:name)
+generos.each do |genero|
+  next if genero == "Generos"
+  #tener cuidado con este metodo debido si hay cambioes en bd revisar que el property_id sea el correspondiente
+  libros = Spree::ProductProperty.where(property_id: 3, value: genero.upcase)
+  libros_genero = libros.pluck(:product_id)
+  taxon = Spree::Taxon.where(name: genero)
+  libros_genero.each do |libro|
+    next if libro == nil
+    Spree::Product.find(libro).taxons = taxon
+  end
+end
+
