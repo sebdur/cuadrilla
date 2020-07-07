@@ -35,6 +35,8 @@ gem 'spree_gateway', '~> 3.7'
 gem 'signer', '~> 1.4.2'
 gem 'savon', '~> 2.11.1'
 gem 'mailgun-ruby'
+gem 'spree_tbk', path: '../spree_tbk'
+gem 'libwebpay', path: '../libwebpay'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

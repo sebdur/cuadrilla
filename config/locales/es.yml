@@ -3,8 +3,6 @@ es:
     formats:
       default: "%d/%m/%Y"
       long: "%d/%m/%Y"
-  spree:
-    stock: Stock
   views:
     pagination:
       truncate: "..."
@@ -350,6 +348,10 @@ es:
         other: "%{count} errores evitaron que este %{resource} fuese grabado:"
   spree:
     stock: Stock
+    plp:
+      results_for: coincidencias con tu búsqueda
+      not_found_text1: "Lamentablemente no existen coincidencias para '%{keywords}'"
+      not_found_text2: ¡Prueba con otras palabras!
     preview_product: Vista previa
     order_success: ¡Tu orden ha sido confirmada!
     order_success_explain: Tus libros estarán contigo en máximo 10 días hábiles
