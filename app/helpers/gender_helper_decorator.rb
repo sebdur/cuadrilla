@@ -3,18 +3,18 @@ module GenderFiltersDecorator
         def gender_filter_values
             [
                 "#{"Verde Animal"}", "#{"Terror y Suspenso"}",
-                "#{"Sociologia"}", "#{"Psicología"}",
+                "#{"Sociología"}", "#{"Psicología"}",
                 "#{"Principiante"}", "#{"Poesía"}",
-                "#{"Música"}", "#{"Mitologia"}",
+                "#{"Música"}", "#{"Mitología"}",
                 "#{"Literatura Universal"}", "#{"Literatura Latinoamericana"}",
                 "#{"Literatura Chilena"}", "#{"Infantil"}",
                 "#{"Ilustración"}", "#{"Historia"}",
-                "#{"Historia de Chile"}", "#{"Filosofia"}",
+                "#{"Historia de Chile"}", "#{"Filosofía"}",
                 "#{"Feminismo"}", "#{"Ensayo"}",
                 "#{"Deporte"}", "#{"Cine"}",
                 "#{"Ciencia Ficción"}", "#{"Biografía"}",
-                "#{"Astrologia"}", "#{"Novela"}",
-                "#{"Novela Romantica"}"
+                "#{"Astrología"}", "#{"Novela"}",
+                "#{"Novela Romántica"}"
             ]
         end
     end
