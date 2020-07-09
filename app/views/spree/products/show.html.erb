@@ -1,9 +1,5 @@
 <% @body_id = 'product-details' %>
 
-<div class="container">
-  <%= spree_breadcrumbs(@taxon, '', @product) %>
-</div>
-
 <% cache cache_key_for_product do %>
   <div class="container pt-4 product-details">
     <div class="row" data-hook="product_show">
