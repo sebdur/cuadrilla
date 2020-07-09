@@ -8,9 +8,9 @@ class MessagesController < Spree::StoreController
     if @message.valid?
       @message.send_simple_message
       redirect_to root_path
-      flash[:success] = "Mensaje recibido. Te contactaremos a la brevedad"
+      flash[:success] = "Mensaje recibido. Te contactaremos a la brevedad!"
     else
-      flash[:warning] = "Hubo un problema enviando tu mensaje. Por favor intenta otra vez"
+      flash[:warning] = "Hubo un problema enviando tu mensaje. Por favor intenta otra vez."
       render :index
     end
   end

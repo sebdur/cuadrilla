@@ -18,11 +18,8 @@ module Spree
 
 				#este if es  momentaneo mientras no exista webpay, cuando exista se debeara cambiar en @oreder.completed?
 				if @order.state == "payment"
-<<<<<<< HEAD
 
 					#atributo spree es address2 -> comuna de la ciudad y/o region
-=======
->>>>>>> 65b52dafc3ac9b680bd2ff54161ab47c14470a0e
 					commune = @order.bill_address.address2.upcase
 					commune_code = QuoteCost.find_by(name: commune).code
 					#hace split de address1 y elimina ultimo espacio del array para manejar direccion sin numeracion

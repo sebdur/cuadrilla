@@ -22,7 +22,6 @@ main{
   min-height: calc(100vh - 129px)
 }
 
-
 #toTop {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
@@ -60,4 +59,16 @@ main{
 
 .logos{
   padding: 0em 5em;
+}
+
+.shopping-cart-buttons{
+  margin: auto;
+}
+
+.kk{
+  background-color: #ffffff;
+}
+
+.form{
+  margin: auto;
 }

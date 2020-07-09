@@ -1,15 +1,5 @@
 <div class="container dropdown d-none d-lg-flex justify-content-end mt-5 pr-4 pb-3 plp-sort">
-  <div data-toggle="dropdown" class="plp-sort-header">
-    <%= Spree.t("plp.#{ params[:sort_by].blank? ? 'sort_by': params[:sort_by].gsub('-', '_') }") %>
-    <%= icon(name: 'arrow-right',
-             classes: 'spree-icon-arrow spree-icon-arrow-up ml-3 plp-sort-header-arrow--up',
-             width: 18,
-             height: 18) %>
-    <%= icon(name: 'arrow-right',
-             classes: 'spree-icon-arrow spree-icon-arrow-down ml-3 plp-sort-header-arrow--down',
-             width: 18,
-             height: 18) %>
-  </div>
+
 
   <div class="dropdown-menu text-right plp-sort-dropdown">
     <ul class="pt-1 plp-sort-dropdown-ul">

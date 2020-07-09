@@ -1,8 +1,8 @@
 <% @body_id = 'cart' %>
 
-<div data-hook="cart_container" class="container shopping-cart">
+<div data-hook="cart_container" class="container shopping-cart my-5">
 
-  <h1 class="text-uppercase shopping-cart-header my-5 text-center">Carro de compras</h1>
+  <h1 class="text-uppercase shopping-cart-header text-center my-5">Carro de compras</h1>
 
   <% if @order.line_items.empty? %>
   <div data-hook="empty_cart" class="shopping-cart-empty">
@@ -17,8 +17,6 @@
         </div>
         <%= link_to "Volver a la tienda", spree.products_path, class: 'btn btn-primary text-uppercase font-weight-bold shopping-cart-empty-continue-link' %>
       </div>
-      <%= link_to "Volver a la tienda", spree.products_path, class: 'btn btn-primary text-uppercase font-weight-bold shopping-cart-empty-continue-link' %>
-    </div>
   </div>
   <% else %>
   <div data-hook="outside_cart_form">
@@ -82,7 +80,7 @@
           <% end %>
         </div>
 
-        <div class="d-flex flex-column text-center mb-5" data-hook="cart_buttons">
+        <div class="d-flex flex-column text-center shopping-cart-buttons" data-hook="cart_buttons">
           <%= link_to "Pagar", spree.checkout_path, class: 'btn btn-primary text-uppercase font-weight-bold cart-checkout-btn shopping-cart-buttons-checkout', id: 'checkout-link', method: :get %>
           <span class="text-uppercase shopping-cart-buttons-or d-lg-none">O</span>
           <%= link_to "Volver a la tienda", spree.products_path, class: 'btn btn-outline-primary text-uppercase font-weight-bold d-lg-none shopping-cart-buttons-continue' %>
@@ -93,7 +91,6 @@
   </div>
   <% end %>
 </div>
-
 <script>
   window.addEventListener('DOMContentLoaded', function() {
     Spree.current_order_token = "<%= @order.token %>"
