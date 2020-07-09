@@ -5,7 +5,7 @@ module GenderFiltersDecorator
                 "#{"Verde Animal"}", "#{"Terror y Suspenso"}",
                 "#{"Sociologia"}", "#{"Psicología"}",
                 "#{"Principiante"}", "#{"Poesía"}",
-                "#{"Música"}", "#{"Mitologia"}",
+                "#{"Música"}", "#{"Mitología"}",
                 "#{"Literatura Universal"}", "#{"Literatura Latinoamericana"}",
                 "#{"Literatura Chilena"}", "#{"Infantil"}",
                 "#{"Ilustración"}", "#{"Historia"}",
@@ -13,8 +13,8 @@ module GenderFiltersDecorator
                 "#{"Feminismo"}", "#{"Ensayo"}",
                 "#{"Deporte"}", "#{"Cine"}",
                 "#{"Ciencia Ficción"}", "#{"Biografía"}",
-                "#{"Astrologia"}", "#{"Novela"}",
-                "#{"Novela Romantica"}"
+                "#{"Astrología"}", "#{"Novela"}",
+                "#{"Novela Romántica"}", "#{"Comic"}"
             ]
         end
     end

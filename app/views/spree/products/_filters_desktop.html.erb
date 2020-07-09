@@ -71,7 +71,6 @@
         <div class="card-body px-0 pt-1">
           <% gender_filter_values.each do |name| %>
               <% gender_link = Spree::Taxon.find_by(name: name) %>
-              
               <%= link_to nested_taxons_path(gender_link.permalink), class: "d-block" do %>
               <div class="d-inline-block py-1 px-2 m-1 text-uppercase plp-filters-card-item <%= 'plp-filters-card-item--selected' if params[:gender] == name %>">
                 <%= "#{name}" %>
