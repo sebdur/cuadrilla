@@ -14,7 +14,7 @@ module GenderFiltersDecorator
                 "#{"Deporte"}", "#{"Cine"}",
                 "#{"Ciencia Ficción"}", "#{"Biografía"}",
                 "#{"Astrología"}", "#{"Novela"}",
-                "#{"Novela Romántica"}"
+                "#{"Novela Romántica"}", "#{"Comic"}"
             ]
         end
     end
