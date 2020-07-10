@@ -13,7 +13,7 @@ require 'csv'
 
 # poblar la bd con los productos + propiedades(autor,editorial,genero)
 
- Spree::Product.delete_all 
+ Spree::Product.delete_all
  Spree::Property.delete_all
  Spree::ProductProperty.delete_all
  Spree::ShippingCategory.delete_all
@@ -22,10 +22,10 @@ require 'csv'
  autor_prop = Spree::Property.where(name: 'autor', presentation: 'Autor').first_or_create
  genero_prop = Spree::Property.where(name: 'genero', presentation: 'Género').first_or_create
 
-sku = 160000
+sku = 1600000
 
 
-CSV.foreach(Rails.root.join('lib/catalogofinal2.csv'), headers: false, col_sep: '|' ) do |row|
+CSV.foreach(Rails.root.join('lib/catalogofinal.csv'), headers: false, col_sep: '|' ) do |row|
 
    p = Spree::Product.create name: row[0], price: row[3], description: row[5], available_on: Time.current, sku: sku, height: 200, weight: 200, shipping_category: Spree::ShippingCategory.where(name: 'Type B').first_or_create
 
@@ -34,14 +34,14 @@ CSV.foreach(Rails.root.join('lib/catalogofinal2.csv'), headers: false, col_sep: 
    p.set_property("genero", row[4])
 
    p.save
- 
+
   sku += 10
- 
+
 end
 
 #valores de envio poblando la bd
 
- 
+
 QuoteCost.delete_all
 
  CSV.foreach(Rails.root.join('lib/cotizador.csv'), headers: true, col_sep: ',' ) do |row|
