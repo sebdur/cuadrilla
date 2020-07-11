@@ -354,6 +354,7 @@ es:
     url: URL
     stock: Stock
     plp:
+      filter_by: FILTROS
       results_for: coincidencias con tu búsqueda
       not_found_text1: "Lamentablemente no existen coincidencias para '%{keywords}'"
       not_found_text2: ¡Prueba con otras palabras!
@@ -364,6 +365,9 @@ es:
       newest_first: Los más nuevos
       price_high_to_low: Mayor a menor precio
       price_low_to_high: Menor a mayor precio
+      price: Precio
+      clear_all: Limpiar
+      done: OK
     preview_product: Vista previa
     order_success: ¡Tu orden ha sido confirmada!
     order_success_explain: Tus libros estarán contigo en máximo 10 días hábiles
@@ -824,7 +828,7 @@ es:
     manual_intervention_required: Intervención Manual requerida
     master_price: Precio principal
     master_sku: SKU
-    stock: Stock 
+    stock: Stock
     match_choices:
       all: Todos
       none: Ninguno
@@ -884,7 +888,7 @@ es:
     new_stock_location: Nueva localización de stock
     new_stock_movement: Nuevo movimiento de stock
     new_stock_transfer: Nueva transferencia de stock
-    new_store_credit_category: Nueva categoría de crédito 
+    new_store_credit_category: Nueva categoría de crédito
     new_tax_category: Nueva categoría de tasa
     new_tax_rate: Nuevo tipo impositivo
     new_taxon: Nueva Categoría

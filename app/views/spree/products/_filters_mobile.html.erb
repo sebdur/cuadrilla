@@ -51,6 +51,27 @@
             </div>
           </div>
         </div>
+        <div class="card plp-overlay-card">
+          <div class="card-header text-capitalize <%= 'collapsed' if params[:gender].blank? %> plp-overlay-card-header" id="headingFour2" data-toggle="collapse" data-target="#collapseFour2" aria-expanded="true" aria-controls="collapseFour2" role="heading" aria-level="3">
+          GÉNERO
+          <%= icon(name: 'arrow-right',
+                  classes: 'spree-icon-arrow spree-icon-arrow-right mt-1 float-right arrow plp-overlay-card-header-arrow',
+                  width: 16,
+                  height: 16) %>
+          </div>
+          <div id="collapseFour2" class="collapse <%= 'show' unless params[:gender].blank? %>" aria-labelledby="headingFour2" data-parent="#filters-accordion">
+            <div class="card-body pt-1">
+              <% gender_filter_values.each do |name| %>
+                  <% gender_link = Spree::Taxon.find_by(name: name) %>
+                  <%= link_to nested_taxons_path(gender_link.permalink, menu_open: 1) do %>
+                  <div class="d-inline-block py-1 px-2 m-2 text-uppercase plp-overlay-card-item <%= 'plp-overlay-card-item--selected' if params[:gender] == name %>">
+                    <%= "#{name}" %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>

@@ -29,6 +29,7 @@
       </div>
     <% end %>
 
+    <%= render 'spree/products/filter_and_sort_mobile_buttons' %>
     <div class="container my-5 d-md-flex">
       <%= render 'spree/products/filters_desktop', permitted_params: permitted_params %>
       <%= render 'spree/shared/products', products: @products %>
@@ -37,7 +38,6 @@
 </div>
 
 <%= render 'spree/products/filters_mobile', permitted_params: permitted_params %>
-<%= render 'spree/products/sort_mobile', permitted_params: permitted_params %>
 
 <% unless products_empty %>
   <% cache cache_key_for_products(@products, 'json-ld') do %>
