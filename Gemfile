@@ -35,6 +35,8 @@ gem 'spree_gateway', '~> 3.7'
 gem 'signer', '~> 1.4.2'
 gem 'savon', '~> 2.11.1'
 gem 'mailgun-ruby'
+gem 'spree_tbk',  git: 'https://github.com/ignaciobriceno/spree_tbk.git'
+gem 'libwebpay', git: 'https://github.com/ignaciobriceno/libwebpay'
 # gem 'spree_tbk', path: '../spree_tbk'
 # gem 'libwebpay', path: '../libwebpay'
 

@@ -1,3 +1,23 @@
+GIT
+  remote: https://github.com/ignaciobriceno/libwebpay
+  revision: 17aaa6a64d770ba3d05017890cfb5337f4516851
+  specs:
+    libwebpay (3.0.0.pre.beta)
+      nokogiri (~> 1.6, >= 1.6.7.2)
+      savon (~> 2)
+      signer
+
+GIT
+  remote: https://github.com/ignaciobriceno/spree_tbk.git
+  revision: 1cf925b04d2a63efa50275431a091b60fcafffd4
+  specs:
+    spree_tbk (0.0.1.alpha)
+      libwebpay
+      spree_api (>= 3.2.0, < 5.0)
+      spree_backend (>= 3.2.0, < 5.0)
+      spree_core (>= 3.2.0, < 5.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -68,7 +88,7 @@ GEM
     akami (1.3.1)
       gyoku (>= 0.4.0)
       nokogiri
-    autoprefixer-rails (9.8.4)
+    autoprefixer-rails (9.8.5)
       execjs
     awesome_nested_set (3.2.1)
       activerecord (>= 4.0.0, < 7.0)
@@ -136,7 +156,7 @@ GEM
     htmlentities (4.3.4)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    httpi (2.4.4)
+    httpi (2.4.5)
       rack
       socksify
     i18n (1.8.3)
@@ -206,7 +226,7 @@ GEM
       activerecord (>= 5.2.1)
     polyglot (0.3.5)
     popper_js (1.16.0)
-    premailer (1.11.1)
+    premailer (1.12.1)
       addressable
       css_parser (>= 1.6.0)
       htmlentities (>= 4.0.0)
@@ -418,7 +438,7 @@ GEM
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
-    websocket-driver (0.7.2)
+    websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
@@ -433,6 +453,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   jbuilder (~> 2.7)
+  libwebpay!
   listen (~> 3.2)
   mailgun-ruby
   pg (>= 0.18, < 2.0)
@@ -445,6 +466,7 @@ DEPENDENCIES
   spree (~> 4.1)
   spree_auth_devise (~> 4.1)
   spree_gateway (~> 3.7)
+  spree_tbk!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
