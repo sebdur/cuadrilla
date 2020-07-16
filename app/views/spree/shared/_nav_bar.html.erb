@@ -1,12 +1,17 @@
 <ul id="nav-bar" class="nav align-items-center d-flex justify-content-end navbar-right">
   <li>
     <div class="dropdown navbar-right-dropdown">
-        <%= link_to "https://www.instagram.com/lacuadrillalibreria/", target:"_blank", class:"d-none d-xl-inline-block navbar-right-dropdown-toggle insta", type:"button", id:"account-button" do %>
-          <i class="fab fa-instagram"></i>
-        <% end %>
-        <%= link_to "https://www.instagram.com/lacuadrillalibreria/", target:"_blank", class:"d-xl-none insta2", type:"button", id:"account-button" do %>
-          <i class="fab fa-instagram"></i>
-        <% end %>
+      <button id="account-button" type="button" data-toggle="dropdown" class="navbar-right-dropdown-toggle" aria-label="<%= Spree.t('nav_bar.show_user_menu')%>" onclick="window.open('https://www.instagram.com/lacuadrillalibreria/', '_blank')">
+      <%= icon(name: 'instagram1',
+              classes: 'd-none d-xl-inline-block',
+              width: 41.4,
+              height: 36)  %>
+
+      <%= icon(name: 'instagram1',
+              classes: 'd-xl-none',
+              width: 27.6,
+              height: 24)  %>
+    </button>
     </div>
   </li>
 

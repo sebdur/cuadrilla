@@ -19,7 +19,11 @@
       <%= flash_messages %>
       <%= yield %>
     </main>
-    <button id="toTop" class="btn"><i class="fas fa-chevron-up"></i></button>
+    <button id="toTop" class="btn">
+      <%= icon(name: 'up-arrow',
+      width: 15,
+      height: 25)  %>
+    </button>
     <%= yield :templates %>
   </div>
 
