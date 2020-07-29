@@ -3,21 +3,6 @@
   src: url('/assets/American_Typewriter.ttf');
 }
 
-.insta{
-  font-size: 2.5em;
-  padding-right: 0.2em;
-}
-
-.insta2{
-  font-size: 1.6em;
-  color: inherit;
-  padding-right: 0.2em;
-}
-
-a:hover{
-  color: inherit;
-}
-
 main{
   min-height: calc(100vh - 129px)
 }
@@ -65,10 +50,14 @@ main{
   margin: auto;
 }
 
-.kk{
-  background-color: #ffffff;
-}
-
 .form{
   margin: auto;
+}
+
+.black{
+  color: #000000;
+}
+
+.btnindex{
+  font-size: 30px;
 }

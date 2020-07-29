@@ -1,8 +1,8 @@
 <div class="checkout-confirm" id="order_details" data-hook>
-  <p class="checkout-content-header">
+  <p class="checkout-content-header form mb-5">
     <%= Spree.t(:summary).upcase %>
   </p>
-  <div class='checkout-confirm-order-details d-flex flex-column flex-lg-wrap' id="order_summary" data-hook>
+  <div class='checkout-confirm-order-details d-flex flex-column flex-lg-wrap mt-5' id="order_summary" data-hook>
     <div class="checkout-confirm-order-details-line-items d-flex flex-column align-items-center w-100 order-0 order-lg-1">
       <div class="checkout-confirm-order-details-line-items-header d-none d-sm-block d-lg-none align-self-start mb-3">
         <%= Spree.t(:products) %>
@@ -69,7 +69,7 @@
         </div>
       </dl>
     </div>
-    <div id="checkout-summary" class="w-100 order-2" data-hook="checkout_summary_box">
+    <div id="checkout-summary" class="w-100 order-2 form" data-hook="checkout_summary_box">
       <%= render partial: 'spree/checkout/summary', locals: { order: @order } %>
       <div data-hook="buttons">
         <% submit_label_key = @order.confirm? ? :place_order : :save_and_continue %>
