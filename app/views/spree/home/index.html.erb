@@ -5,10 +5,16 @@
   data-src="<%= asset_path('homepage/hero.jpg') %>"/>
 </div>
 
-<div data-product-carousel data-product-carousel-taxon-id='feminismo' class="my-5"></div>
+<div data-product-carousel data-product-carousel-taxon-id='populares' class="my-5"></div>
 
-<div class="text-center">
-  <%= link_to "IR AL CATÁLOGO", spree.products_path, class: 'btn rounded btn-lg font-weight-bold btn-primary px-3 my-3 display-5 btnindex' %>
+<div class="homepage-fashion-trends-box mb-3">
+  <div class="text-center">
+    <div class="homepage-fashion-trends-box-fashion-trends-text mb-2">Somos una librería incipiente en el mercado.</div>
+    <div class="homepage-fashion-trends-box-description-text text-center mb-3">
+      Buscamos traer libros progresistas, que fomenten el pensamiento crítico y así dejar una huella en nuestros queridos clientes.
+    </div>
+    <%= link_to "IR AL CATÁLOGO", spree.products_path, class: 'btn px-5 spree-btn btn-outline-primary' %>
+  </div>
 </div>
 
-<div data-product-carousel data-product-carousel-taxon-id='1' class="my-5"></div>
+<div data-product-carousel data-product-carousel-taxon-id='feminismo' class="my-5"></div>

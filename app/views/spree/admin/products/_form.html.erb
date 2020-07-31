@@ -69,14 +69,6 @@
         <% end %>
       </div>
 
-      <div data-hook="admin_product_form_promotionable">
-        <%= f.field_container :promotionable, class: ['form-group'] do %>
-          <%= f.label :promotionable, Spree.t(:promotionable) %>
-          <%= f.error_message_on :promotionable %>
-          <%= f.check_box :promotionable, class: 'form-control' %>
-        <% end %>
-      </div>
-
       <div data-hook="admin_product_form_sku">
         <%= f.field_container :master_sku, class: ['form-group'] do %>
           <%= f.label :master_sku, Spree.t(:master_sku) %>
@@ -178,48 +170,4 @@
     <% end %>
   </div>
 
-  <div data-hook="admin_product_form_option_types">
-    <%= f.field_container :option_types, class: ['form-group'] do %>
-      <%= f.label :option_type_ids, Spree.t(:option_types) %>
-
-      <% if can? :modify, Spree::ProductOptionType %>
-        <%= f.hidden_field :option_type_ids, value: @product.option_type_ids.join(',') %>
-      <% elsif @product.option_types.any? %>
-        <ul class="text_list">
-          <% @product.option_types.each do |type| %>
-            <li><%= type.presentation %> (<%= type.name %>)</li>
-          <% end %>
-        </ul>
-      <% else %>
-        <div class="alert alert-info"><%= Spree.t(:no_resource_found, resource: :option_types) %></div>
-      <% end %>
-
-    <% end %>
-  </div>
-
-  <div data-hook="admin_product_form_meta">
-    <div data-hook="admin_product_form_meta_title">
-      <%= f.field_container :meta_title, class: ['form-group'] do %>
-        <%= f.label :meta_title, Spree.t(:meta_title) %>
-        <%= f.text_field :meta_title, class: 'form-control' %>
-      <% end %>
-    </div>
-
-    <div data-hook="admin_product_form_meta_keywords">
-      <%= f.field_container :meta_keywords, class: ['form-group'] do %>
-        <%= f.label :meta_keywords, Spree.t(:meta_keywords) %>
-        <%= f.text_field :meta_keywords, class: 'form-control' %>
-      <% end %>
-    </div>
-
-    <div data-hook="admin_product_form_meta_description">
-      <%= f.field_container :meta_description, class: ['form-group'] do %>
-        <%= f.label :meta_description, Spree.t(:meta_description) %>
-        <%= f.text_field :meta_description, class: 'form-control' %>
-      <% end %>
-    </div>
-
-    <div data-hook="admin_product_form_additional_fields"></div>
-
-  </div>
 </div>
