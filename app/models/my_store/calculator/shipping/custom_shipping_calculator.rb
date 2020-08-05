@@ -9,6 +9,7 @@ class MyStore::Calculator::Shipping::CustomShippingCalculator < Spree::ShippingC
     if QuoteCost.exists?(name: commune)
       quote_amount = QuoteCost.find_by(name: commune).cost
     else
+      quote_amount = 8000
       # flash[:warning] = "Hubo un problema enviando tu mensaje. Por favor intenta otra vez"
       # flash[:error] = "lala"
     end
