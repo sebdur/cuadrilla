@@ -33,7 +33,8 @@
       <% @order.shipments.valid.each do |shipment| %>
         <dd class="text-center text-lg-left">
           <%= shipment.shipping_method.name %>
-          Codigo de trackeo <%= link_to_tracking(shipment) if shipment.shipped? %>
+          <p>Código de trackeo</p>
+          <p class="font-weight-bold"> <%= link_to_tracking(shipment) if shipment.shipped? %> </p>
         </dd>
       <% end %>
     </div>
