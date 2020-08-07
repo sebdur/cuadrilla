@@ -59,28 +59,6 @@
       </li>
     <% end %>
 
-    <% if can? :index, Spree::ReturnAuthorization %>
-      <% if @order.completed? %>
-        <li data-hook='admin_order_tabs_return_authorizations'>
-          <%= link_to_with_icon 'transfer',
-            Spree.t(:return_authorizations),
-            spree.admin_order_return_authorizations_url(@order),
-            class: "#{'active' if current == :return_authorizations} nav-link" %>
-        </li>
-      <% end %>
-    <% end %>
-
-    <% if can? :index, Spree::CustomerReturn %>
-      <% if @order.completed? %>
-        <li>
-          <%= link_to_with_icon 'transfer',
-            Spree.t(:customer_returns),
-            spree.admin_order_customer_returns_url(@order),
-            class: "#{'active' if current == :customer_returns} nav-link" %>
-        </li>
-      <% end %>
-    <% end %>
-
     <% if can? :update, @order %>
       <li data-hook='admin_order_tabs_state_changes'>
         <%= link_to_with_icon 'refresh',
