@@ -39,13 +39,6 @@
         </div>
         <div>
           <dt class="text-uppercase">
-            <%= Spree.t(:billing_address) %>
-            <%= checkout_edit_link %>
-          </dt>
-          <dd><%= sanitize @order.bill_address.to_s, tags: %w[br] %></dd>
-        </div>
-        <div>
-          <dt class="text-uppercase">
             <%= Spree.t(:shipping) %>
             <%= checkout_edit_link('delivery') %>
           </dt>
@@ -69,12 +62,12 @@
         </div>
       </dl>
     </div>
-    <div id="checkout-summary" class="w-100 order-2 form" data-hook="checkout_summary_box">
-      <%= render partial: 'spree/checkout/summary', locals: { order: @order } %>
-      <div data-hook="buttons">
-        <% submit_label_key = @order.confirm? ? :place_order : :save_and_continue %>
-        <%= submit_tag "Guardar y continuar", class: 'btn btn-primary text-uppercase font-weight-bold w-100 checkout-content-save-continue-button' %>
-      </div>
+  </div>
+  <div id="checkout-summary" class="w-100 order-2 form" data-hook="checkout_summary_box">
+    <%= render partial: 'spree/checkout/summary', locals: { order: @order } %>
+    <div data-hook="buttons">
+      <% submit_label_key = @order.confirm? ? :place_order : :save_and_continue %>
+      <%= submit_tag "Guardar y continuar", class: 'btn btn-primary text-uppercase font-weight-bold w-100 checkout-content-save-continue-button' %>
     </div>
   </div>
 </div>
