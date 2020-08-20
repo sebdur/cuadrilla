@@ -1,3 +1,5 @@
+require 'my_store/product_search'
+
  Rails.application.config.spree.calculators.shipping_methods << MyStore::Calculator::Shipping::CustomShippingCalculator
 # config/initializers/spree.rb
 
@@ -13,6 +15,7 @@
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
 Spree.config do |config|
+  config.searcher_class = MyStore::ProductSearch
   config.logo = 'lacuadrilla2.png'
   config.admin_interface_logo = 'lacuadrilla2.png'
   config.admin_show_version = false
