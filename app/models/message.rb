@@ -9,7 +9,7 @@ class Message
     RestClient.post "https://api:#{mailgun}"\
     "@api.mailgun.net/v3/#{sandbox}/messages",
     :from => email,
-    :to => "sebduran91@gmail.com",
+    :to => "contacto@cuadrilla.cl",
     :subject => "#{name} ha enviado un mensaje a través de www.cuadrilla.cl",
     :text => "Nombre: #{name}\nEmail: #{email}\nTeléfono: #{phone_number}\n\n #{body}"
   end
